@@ -4,7 +4,7 @@ OUT = build
 
 $(shell   mkdir -p $(OUT))
 
-all: build/main.hex
+all: $(OUT)/main.hex
 
 $(OUT)/main.hex: $(OBJECTS) main.c
 	xc8-cc -mcpu=$(CHIP) main.c $(OBJECTS) -o $(OUT)/main.hex
