@@ -88,6 +88,7 @@ void add_second() {
 void __interrupt() timer_interrupt(void) {
     if (PIE1bits.TMR1IE && TMR1IF) {
         stop_timer();
+        T1CONbits.TMR1ON = 1;
         timer_counter++;
         if (timer_counter == 4) {
             add_second();
@@ -95,7 +96,6 @@ void __interrupt() timer_interrupt(void) {
             timer_counter = 0;
         }
         TMR1IF = 0;
-        T1CONbits.TMR1ON = 1;
     }
 }
 
