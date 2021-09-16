@@ -12,7 +12,6 @@ void init_timer(void) {
     T1CON = 0xB1;
 }
 
-
 void display_time(char *string, uint8_t hours, uint8_t minutes, 
         uint8_t seconds) {
     lcd_move_cursor(0x08);
@@ -22,6 +21,6 @@ void display_time(char *string, uint8_t hours, uint8_t minutes,
 
 void adc_to_clock(char *string, uint8_t *clock_value, uint16_t adc_value, 
         uint8_t range) {
-    *clock_value = adc_value / range;
+    *clock_value = (uint8_t) adc_value / range;
     sprintf(string, "%02d", *clock_value);
 }
