@@ -2,8 +2,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
-#include <xc.h>
 
+
+#include "piconf.h"
 #include "lcd.h"
 #include "adc.h"
 #include "clock.h"

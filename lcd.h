@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
-#include <xc.h>
+#include "piconf.h"
 
 #define DATA PORTB
 #define RS PORTDbits.RD1
